@@ -3,19 +3,18 @@ import "swiper/css";
 import "./App.css";
 import "./assets/style.scss";
 
-import { useState } from "react";
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import About from "./components/About";
-import Services from "./components/Services";
-import Projects from "./components/Projects";
-import Reviews from "./components/Reviews";
-import Pricing from "./components/Pricing";
-import Contact from "./components/Contact";
-import Blogs from "./components/Blogs";
-import LogoContainer from "./components/LogoContainer";
-import Footer from "./components/Footer";
+import About from "./components/HomeComponents/About";
+import Blogs from "./components/HomeComponents/Blogs";
+import Contact from "./components/HomeComponents/Contact";
+import Footer from "./components/HomeComponents/Footer";
+import LogoContainer from "./components/HomeComponents/LogoContainer";
+import Pricing from "./components/HomeComponents/Pricing";
+import Projects from "./components/HomeComponents/Projects";
+import Reviews from "./components/HomeComponents/Reviews";
+import Services from "./components/HomeComponents/Services";
 
 function App() {
   return (
