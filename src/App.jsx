@@ -1,36 +1,76 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "swiper/css";
-import "./App.css";
-import "./assets/style.scss";
 
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import About from "./components/HomeComponents/About";
-import Blogs from "./components/HomeComponents/Blogs";
-import Contact from "./components/HomeComponents/Contact";
-import Footer from "./components/HomeComponents/Footer";
-import LogoContainer from "./components/HomeComponents/LogoContainer";
-import Pricing from "./components/HomeComponents/Pricing";
-import Projects from "./components/HomeComponents/Projects";
-import Reviews from "./components/HomeComponents/Reviews";
-import Services from "./components/HomeComponents/Services";
+import About from "./components/Pages/AboutPage";
+import Blogs from "./components/Pages/BlogsPage";
+import Contact from "./components/Pages/ContactPage";
+import Footer from "./components/Pages/FooterPage";
+import Pricing from "./components/Pages/PricingPage";
+import Projects from "./components/Pages/ProjectsPage";
+import Reviews from "./components/Pages/ReviewsPage";
+import Services from "./components/Pages/ServicesPage";
+import { AnimatePresence } from "framer-motion";
+import PageWrapper from "./components/Pages/PageWrapper";
+import { useEffect } from "react";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
-    <Router>
+    <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/reviews" element={<Reviews />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/logos" element={<LogoContainer />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/about"
+            element={
+              <PageWrapper>
+                <About />
+              </PageWrapper>
+            }
+          />
+          <Route
+            path="/services"
+            element={
+              <PageWrapper>
+                <Services />
+              </PageWrapper>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <PageWrapper>
+                <Projects />
+              </PageWrapper>
+            }
+          />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route
+            path="/contact"
+            element={
+              <PageWrapper>
+                <Contact />
+              </PageWrapper>
+            }
+          />
+          <Route path="/blogs" element={<Blogs />} />
+        </Routes>
+      </AnimatePresence>
       <Footer />
       {/* <div className={`contact-info${contactInfoActive ? " active" : ""}`}>
         <div
@@ -49,7 +89,7 @@ function App() {
           <Link to="#" className="fab fa-linkedin"></Link>
         </div>
       </div> */}
-    </Router>
+    </>
   );
 }
 

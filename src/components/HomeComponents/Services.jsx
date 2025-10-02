@@ -1,82 +1,87 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const services = [
+  {
+    img: "../images/service-1.png",
+    title: "Building Construction",
+    desc: "Construction is an ancient human activity. It began with the functional need for a controlled environment to moderate the effects of climate.",
+  },
+  {
+    img: "../images/service-2.png",
+    title: "House Renovation",
+    desc: "Living Room, Bathroom, Full Home, Kitchen, Tiling & Fabrication Work – our renovation services cover it all.",
+  },
+  {
+    img: "../images/service-3.png",
+    title: "Architecture Design",
+    desc: "From luxurious vacation homes to stunning retreats, we deliver best-in-class architecture & interior designs.",
+  },
+  {
+    img: "../images/service-4.png",
+    title: "Material Supply",
+    desc: "We supply concrete, steel, wood, masonry & stone ensuring durability and quality for every construction.",
+  },
+  {
+    img: "../images/service-5.png",
+    title: "Construction Consultant",
+    desc: "Expert consultancy provided by our professionals to plan, monitor & deliver successful projects.",
+  },
+  {
+    img: "../images/service-6.png",
+    title: "Interior Design",
+    desc: "Blending art & science to craft functional, elegant interiors that enhance your lifestyle.",
+  },
+  {
+    img: "../images/service-7.png",
+    title: "Building Maintenance",
+    desc: "Comprehensive maintenance services to sustain building quality, safety, and long-term value.",
+  },
+  {
+    img: "../images/service-8.png",
+    title: "Building Renovation",
+    desc: "Transforming existing spaces with smart renovation solutions to bring them back to life.",
+  },
+];
 
 function Services() {
   return (
-    <section className="services" id="services">
-      <h1 className="heading"> our services </h1>
-      <div className="box-container">
-        <div className="box">
-          <img src="../images/service-1.png" alt="" />
-          <h3>building construction</h3>
-          <p>
-            Construction is an ancient human activity. It began with the purely
-            functional need for a controlled environment to moderate the effects
-            of climate.
-          </p>
-        </div>
-        <div className="box">
-          <img src="../images/service-2.png" alt="" />
-          <h3>house renovation</h3>
-          <p>
-            Our offerings in Renovation. Living Room Renovation. Bathroom
-            Renovation. Full Home Renovation. Tiling Work. Fabrication Work.
-            Kitchen Renovation.
-          </p>
-        </div>
-        <div className="box">
-          <img src="../images/service-3.png" alt="" />
-          <h3>architechture design</h3>
-          <p>
-            Best of Architecture, Craftmanship, & Interior Design - From
-            luxurious vacation homes to stunning retreats, check out some of the
-            best-designed homes.
-          </p>
-        </div>
-        <div className="box">
-          <img src="../images/service-4.png" alt="" />
-          <h3>material supply</h3>
-          <p>
-            The construction industry uses a variety of building materials for
-            different aspects of a home build. Architects consult with
-            structural engineers on the load-bearing capabilities of the
-            materials with which they design, and the most common materials are
-            concrete, steel, wood, masonry, and stone.
-          </p>
-        </div>
-        <div className="box">
-          <img src="../images/service-5.png" alt="" />
-          <h3>construction consultant</h3>
-          <p>
-            Consultancy in construction is performed by a group of professionals
-            designated as consultants.
-          </p>
-        </div>
-        <div className="box">
-          <img src="../images/service-6.png" alt="" />
-          <h3>interior design</h3>
-          <p>
-            The science, art or process of setting up the interiors of a room, a
-            floor or building is known as Interior Designing.
-          </p>
-        </div>
-        <div className="box">
-          <img src="../images/service-7.png" alt="" />
-          <h3>building maintenance</h3>
-          <p>
-            Building maintenance is work undertaken to keep, restore or improve
-            every facility, i.e., every part of a building, its services and
-            surrounds to a currently acceptable standard and to sustain the
-            utility and value of the facility.”.
-          </p>
-        </div>
-        <div className="box">
-          <img src="../images/service-8.png" alt="" />
-          <h3>building renovation</h3>
-          <p>
-            Our offerings in Renovation. Living Room Renovation. Bathroom
-            Renovation. Full Home Renovation. Tiling Work. Fabrication Work.
-            Kitchen Renovation.
-          </p>
+    <section id="services" className="py-16 bg-gray-100">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-gray-900">
+          Our <span className="text-indigo-600">Services</span>
+        </motion.h1>
+
+        {/* Service Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {services.map((service, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition">
+              <img
+                src={service.img}
+                alt={service.title}
+                className="mx-auto mb-4 w-20 h-20 object-contain"
+              />
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {service.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -28,7 +28,6 @@ function Footer() {
         </Link>
       </div>
       <div className="credit">
-        {" "}
         created by <span>Dodi Tank</span> | all rights reserved!{" "}
       </div>
     </section>

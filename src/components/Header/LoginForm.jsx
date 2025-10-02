@@ -1,5 +1,3 @@
-import React from "react";
-
 function LoginForm({ active }) {
   const handleLogin = (e) => {
     e.preventDefault();

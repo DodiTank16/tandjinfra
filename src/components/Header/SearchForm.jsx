@@ -1,6 +1,3 @@
-import React from "react";
-import { FaSearch } from "react-icons/fa";
-
 function SearchForm({ active }) {
   const handleSearch = (e) => {
     e.preventDefault();
