@@ -1,24 +1,19 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "swiper/css";
 
-import {
-  Route,
-  BrowserRouter as Router,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Pages/FooterPage";
 import Home from "./components/Home";
 import About from "./components/Pages/AboutPage";
+import Services from "./components/Pages/ServicesPage";
+import Projects from "./components/Pages/ProjectsPage";
 import Blogs from "./components/Pages/BlogsPage";
 import Contact from "./components/Pages/ContactPage";
-import Footer from "./components/Pages/FooterPage";
 import Pricing from "./components/Pages/PricingPage";
-import Projects from "./components/Pages/ProjectsPage";
 import Reviews from "./components/Pages/ReviewsPage";
-import Services from "./components/Pages/ServicesPage";
-import { AnimatePresence } from "framer-motion";
 import PageWrapper from "./components/Pages/PageWrapper";
+import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
 function App() {
@@ -72,23 +67,6 @@ function App() {
         </Routes>
       </AnimatePresence>
       <Footer />
-      {/* <div className={`contact-info${contactInfoActive ? " active" : ""}`}>
-        <div
-          id="close-contact-info"
-          className="fas fa-times"
-          onClick={() => setContactInfoActive(false)}></div>
-        <div className="info">
-          <i className="fas fa-phone"></i>
-          <h3>+123-456-7890</h3>
-          <p>example@email.com</p>
-        </div>
-        <div className="share">
-          <Link href="#" className="fab fa-facebook-f"></Link>
-          <Link to="#" className="fab fa-twitter"></Link>
-          <Link to="#" className="fab fa-instagram"></Link>
-          <Link to="#" className="fab fa-linkedin"></Link>
-        </div>
-      </div> */}
     </>
   );
 }

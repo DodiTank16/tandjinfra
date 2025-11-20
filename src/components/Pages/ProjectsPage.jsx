@@ -61,7 +61,7 @@ function ProjectsPage() {
       {/* Projects Grid */}
       <section className="px-6 md:px-12 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, index) => (
-          <motion.a
+          <a
             key={index}
             href={project.img}
             target="_blank"
@@ -87,7 +87,7 @@ function ProjectsPage() {
                 +
               </motion.div>
             </div>
-          </motion.a>
+          </a>
         ))}
       </section>
 

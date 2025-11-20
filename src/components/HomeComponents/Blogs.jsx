@@ -1,10 +1,9 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 function Blogs() {
   const blogPosts = [
