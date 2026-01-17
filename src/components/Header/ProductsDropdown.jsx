@@ -18,7 +18,8 @@ function ProductsDropdown() {
               {cat.subCategories.slice(0, 4).map((sub) => (
                 <li key={sub.id} className="hover:bg-[#00455E] hover:border rounded-lg">
                   <Link
-                    to={`/products/${cat.id}/${sub.id}`}
+                    // to={`/products/${cat.id}/${sub.id}`}
+                    to={`/products`}
                     className="text-sm text-gray-600 hover:text-white block px-2 py-1 rounded-lg transition">
                     {sub.name}
                   </Link>
