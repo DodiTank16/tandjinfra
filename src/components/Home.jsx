@@ -35,8 +35,9 @@ function Home() {
       <div className="relative w-full h-screen" id="home">
         <Swiper
           className="w-full h-full"
-          loop
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          speed={99999}
+          // loop
+          // autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{
             clickable: true,
             dynamicBullets: true,
@@ -56,15 +57,11 @@ function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="relative z-10 text-center max-w-2xl px-6">
-                  <h3 className="text-4xl md:text-6xl font-bold text-white leading-tight drop-shadow-lg">
-                    {slide.title}
-                  </h3>
-                  <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed">
-                    {slide.desc}
-                  </p>
+                  <h3 className="text-4xl md:text-6xl font-bold text-white leading-tight drop-shadow-lg">{slide.title}</h3>
+                  <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed">{slide.desc}</p>
                   <Link
                     to="/about"
-                    className="btn inline-block mt-8 px-8 py-3 rounded-lg text-white font-medium shadow-lg hover:bg-indigo-700 transition">
+                    className="btn inline-block mt-8 px-8 py-3 rounded-lg text-white font-medium shadow-lg bg-[#00455E] hover:bg-[#00749e] transition">
                     Get Started
                   </Link>
                 </motion.div>

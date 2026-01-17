@@ -1,5 +1,5 @@
 :root {
-    --yellow: #4f39f6;
+    --yellow: #00455E;
     --black: #111;
     --white: #fff;
     --light-color: #666;
@@ -7,13 +7,17 @@
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     --border: .1rem solid rgba(0, 0, 0, .3);
 
-    --swiper-pagination-color: #4f39f6;
+    --swiper-pagination-color: #00455E;
     /* Color for active bullet */
     --swiper-pagination-bullet-inactive-color: #cccccc;
     /* Color for inactive bullets */
     --swiper-pagination-bullet-inactive-opacity: 0.5;
     /* Opacity for inactive bullets */
 
+}
+
+.swiper-pagination-bullet-active-main {
+    background-color: #000 !important;
 }
 
 * {
@@ -918,6 +922,14 @@ section {
 
 .footer .credit span {
     color: var(--yellow);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
 }
 
 @media (max-width: 1200px) {

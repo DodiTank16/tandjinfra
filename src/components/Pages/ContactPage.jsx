@@ -16,7 +16,7 @@ function ContactPage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
-          Contact <span className="text-indigo-600">Us</span>
+          Contact <span className="text-[#00455E]">Us</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -24,8 +24,7 @@ function ContactPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
-          Have a project in mind or any questions? Reach out to us and we’ll get
-          back to you promptly.
+          Have a project in mind or any questions? Reach out to us and we’ll get back to you promptly.
         </motion.p>
       </section>
 
@@ -49,31 +48,29 @@ function ContactPage() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">
-            Get in Touch
-          </h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">Get in Touch</h3>
           <input
             type="text"
             placeholder="Your Name"
-            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00749e] transition"
           />
           <input
             type="email"
             placeholder="Your Email"
-            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00749e] transition"
           />
           <input
             type="tel"
             placeholder="Your Phone"
-            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00749e] transition"
           />
           <textarea
             placeholder="Your Message"
             rows="5"
-            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"></textarea>
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00749e] transition"></textarea>
           <button
             type="submit"
-            className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition transform hover:scale-105 active:scale-95">
+            className="w-full py-3 bg-[#00455E] text-white font-semibold rounded-lg shadow-lg hover:bg-[#00749e] transition transform hover:scale-105 active:scale-95">
             Send Message
           </button>
         </motion.form>

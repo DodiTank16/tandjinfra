@@ -45,7 +45,7 @@ function ProjectsPage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
-          Our <span className="text-indigo-600">Projects</span>
+          Our <span className="text-[#00455E]">Projects</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -53,8 +53,7 @@ function ProjectsPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
-          Explore our portfolio of exceptional projects that demonstrate our
-          expertise in construction, architecture, and design.
+          Explore our portfolio of exceptional projects that demonstrate our expertise in construction, architecture, and design.
         </motion.p>
       </section>
 
@@ -77,13 +76,9 @@ function ProjectsPage() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-50"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-500">
-              <h3 className="text-3xl md:text-4xl font-semibold">
-                {project.title}
-              </h3>
+              <h3 className="text-3xl md:text-4xl font-semibold">{project.title}</h3>
               <p className="text-md mt-2">{project.desc}</p>
-              <motion.div
-                className="mt-4 text-2xl"
-                whileHover={{ rotate: 90, scale: 1.2 }}>
+              <motion.div className="mt-4 text-2xl" whileHover={{ rotate: 90, scale: 1.2 }}>
                 +
               </motion.div>
             </div>
@@ -92,17 +87,14 @@ function ProjectsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 px-6 text-center bg-indigo-600 text-white rounded-t-3xl">
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">
-          Inspired by Our Work?
-        </h2>
+      <section className="py-24 px-6 text-center bg-[#00455E] text-white rounded-t-3xl">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">Inspired by Our Work?</h2>
         <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-          Contact us today to discuss your project and see how we can bring your
-          vision to life.
+          Contact us today to discuss your project and see how we can bring your vision to life.
         </p>
         <a
           href="/contact"
-          className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition">
+          className="px-6 py-3 bg-white text-[#616161] hover:text-white font-semibold rounded-xl shadow-lg hover:bg-[#00749e] transition">
           Get in Touch
         </a>
       </section>

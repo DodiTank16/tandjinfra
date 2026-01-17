@@ -57,7 +57,7 @@ function ServicesPage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-          Our <span className="text-indigo-600">Services</span>
+          Our <span className="text-[#616161]">Services</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -65,8 +65,8 @@ function ServicesPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
-          We deliver exceptional construction, design, and consultancy services
-          tailored for your dream projects. Explore what we can do for you.
+          We deliver exceptional construction, design, and consultancy services tailored for your dream projects. Explore what we
+          can do for you.
         </motion.p>
       </section>
 
@@ -81,33 +81,22 @@ function ServicesPage() {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
             className="bg-white shadow-lg rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition">
-            <img
-              src={service.img}
-              alt={service.title}
-              className="w-20 h-20 mb-6"
-            />
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">
-              {service.title}
-            </h3>
-            <p className="text-gray-600 text-base md:text-sm leading-relaxed">
-              {service.desc}
-            </p>
+            <img src={service.img} alt={service.title} className="w-20 h-20 mb-6" />
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">{service.title}</h3>
+            <p className="text-gray-600 text-base md:text-sm leading-relaxed">{service.desc}</p>
           </motion.div>
         ))}
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 px-6 text-center bg-indigo-600 text-white rounded-t-3xl">
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">
-          Want to start your project with us?
-        </h2>
+      <section className="py-24 px-6 text-center bg-[#616161] text-white rounded-t-3xl">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">Want to start your project with us?</h2>
         <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-          Contact our team today and let’s bring your vision to life with our
-          professional services.
+          Contact our team today and let’s bring your vision to life with our professional services.
         </p>
         <a
           href="/contact"
-          className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition">
+          className="px-6 py-3 bg-white text-[#616161] font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition">
           Contact Us
         </a>
       </section>

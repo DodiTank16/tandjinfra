@@ -46,9 +46,9 @@ function Blogs() {
   ];
 
   return (
-    <section className="blogs py-16 bg-gray-50" id="blogs">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 uppercase tracking-wide">
-        Our Blogs
+    <section className="blogs py-16 px-10 bg-gray-50" id="blogs">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 uppercase tracking-wide">
+        Our <span className="text-[#00455E]">Blogs</span>
       </h1>
 
       <Swiper
@@ -85,15 +85,11 @@ function Blogs() {
 
               {/* Content */}
               <div className="content p-5 flex flex-col justify-between flex-1">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {blog.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {blog.desc}
-                </p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{blog.title}</h3>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{blog.desc}</p>
                 <Link
                   to="/blogs"
-                  className="inline-block mt-auto px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg shadow hover:bg-blue-700 transition">
+                  className="inline-block mt-auto px-4 py-2 bg-[#00455E] text-white text-sm font-medium rounded-lg shadow hover:bg-[#00749e] transition">
                   Read More
                 </Link>
               </div>

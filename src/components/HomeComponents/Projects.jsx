@@ -46,7 +46,7 @@ function Projects() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-gray-900">
-          Our <span className="text-indigo-600">Projects</span>
+          Our <span className="text-[#00455E]">Projects</span>
         </motion.h1>
 
         {/* Gallery */}
@@ -70,7 +70,7 @@ function Projects() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-white text-center">
+              <div className="absolute inset-0 bg-[#00455E] bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-white text-center">
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
                 <p className="text-sm mt-2">{project.category}</p>
                 <FiPlus className="text-3xl mt-4" />

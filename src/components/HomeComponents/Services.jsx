@@ -55,7 +55,7 @@ function Services() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-gray-900">
-          Our <span className="text-indigo-600">Services</span>
+          Our <span className="text-[#00455E]">Services</span>
         </motion.h1>
 
         {/* Service Cards */}
@@ -69,17 +69,9 @@ function Services() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
               className="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition">
-              <img
-                src={service.img}
-                alt={service.title}
-                className="mx-auto mb-4 w-20 h-20 object-contain"
-              />
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {service.desc}
-              </p>
+              <img src={service.img} alt={service.title} className="mx-auto mb-4 w-20 h-20 object-contain" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">{service.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -15,6 +15,7 @@ import Reviews from "./components/Pages/ReviewsPage";
 import PageWrapper from "./components/Pages/PageWrapper";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import Products from "./components/Pages/ProductsPage";
 
 function App() {
   const location = useLocation();
@@ -53,6 +54,15 @@ function App() {
               </PageWrapper>
             }
           />
+          <Route
+            path="/products"
+            element={
+              <PageWrapper>
+                <Products />
+              </PageWrapper>
+            }
+          />
+
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route
