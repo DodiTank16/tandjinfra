@@ -154,7 +154,7 @@ function Sidebar({ expandedCategory, setExpandedCategory, selectedSubCategory, s
         whileTap={{ scale: 0.97 }}
         onClick={() => setSelectedSubCategory(null)}
         className={`w-full mb-5 flex items-center px-2 py-2 rounded-xl text-sm font-semibold transition hover:text-white
-          ${selectedSubCategory === null ? " bg-[#00455E] hover:bg-[#00749e]" : "hover:bg-[#00749e] text-gray-800"}`}>
+          ${selectedSubCategory === null ? " bg-[#00455E] hover:bg-[#00749e] text-white" : "hover:bg-[#00749e] text-gray-800"}`}>
         All Products
       </motion.div>
       {categories.map((cat) => {
@@ -186,7 +186,7 @@ function Sidebar({ expandedCategory, setExpandedCategory, selectedSubCategory, s
                     whileTap={{ scale: 0.96 }}
                     onClick={() => setSelectedSubCategory(sub.id)}
                     className={`flex items-start gap-2 cursor-pointer px-3 py-2 rounded-lg text-sm transition
-                ${selectedSubCategory === sub.id ? "bg-[#00455E] text-white" : "hover:bg-[#00749e]"}`}>
+                ${selectedSubCategory === sub.id ? "bg-[#00455E] text-white" : "hover:bg-[#00749e] hover:text-white"}`}>
                     <TiMinus className="w-4 h-4 mt-1 shrink-0" />
                     <span className="leading-snug">{sub.name}</span>
                   </motion.li>
