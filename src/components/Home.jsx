@@ -11,6 +11,7 @@ import Contact from "./HomeComponents/Contact";
 import Pricing from "./HomeComponents/Pricing";
 import Projects from "./HomeComponents/Projects";
 import Services from "./HomeComponents/Services";
+import Products from "./HomeComponents/Products";
 
 function Home() {
   const slides = [
@@ -72,6 +73,7 @@ function Home() {
       </div>
       {/* Sections */}
       <About />
+      <Products />
       <Services />
       <Projects />
       {/* <Pricing /> */}
