@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { categories, products } from "../../productsData";
-import Slider from "./Slider";
-import { CategoryTabs } from "./Slider";
+import Slider, { CategoryTabs } from "./Slider";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,6 +20,7 @@ const cardVariants = {
 
 function ProductSlider() {
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
+  const [activeProduct, setActiveProduct] = useState(null);
 
   const subCategoryIds = useMemo(() => {
     const cat = categories.find((c) => c.id === activeCategory);
@@ -29,6 +30,26 @@ function ProductSlider() {
   const filteredProducts = useMemo(() => {
     return products.filter((p) => subCategoryIds.includes(p.subCategory));
   }, [subCategoryIds]);
+
+  useEffect(() => {
+    if (activeProduct) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activeProduct]);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === "Escape") setActiveProduct(null);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
 
   return (
     <section className="py-20 bg-[#f7f7f7]">
@@ -45,35 +66,67 @@ function ProductSlider() {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="flex gap-10">
+              className="flex gap-10 pb-5">
               {filteredProducts.map((product) => (
                 <motion.div key={product.id} variants={cardVariants}>
-                  <ProductCard product={product} />
+                  <ProductCard product={product} onSelect={setActiveProduct} />
                 </motion.div>
               ))}
             </motion.div>
           </AnimatePresence>
         </Slider>
       </div>
+
+      <AnimatePresence>
+        {activeProduct && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-end md:items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveProduct(null)}>
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-t-3xl md:rounded-3xl w-full md:max-w-xl p-6 max-h-[90vh] overflow-y-auto">
+              <img src={activeProduct.image} alt={activeProduct.name} className="w-full h-56 object-cover rounded-2xl mb-4" />
+              <h2 className="text-xl font-bold mb-2">{activeProduct.name}</h2>
+              <p className="text-gray-600 leading-relaxed">{activeProduct.description}</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
 
 export default ProductSlider;
 
-function ProductCard({ product }) {
+function ProductCard({ product, onSelect }) {
+  const navigate = useNavigate();
+
   return (
     <motion.div
-      whileHover={{ y: -8 }}
-      className="min-w-[320px] bg-white rounded-2xl shadow-md
-                 flex flex-col items-center px-8 py-10 text-center">
+      whileHover={{ y: -2 }}
+      className="
+        min-w-[320px] bg-white rounded-2xl shadow-md flex flex-col items-center py-10 text-center hover:shadow-2xl transition-shadow duration-300 cursor-pointer
+      "
+      onClick={() => onSelect(product)}>
       <div className="h-44 w-full flex items-center justify-center mb-8">
-        <img src={product.image} alt={product.name} className="max-h-full object-contain grayscale" />
+        <img src={product.image} alt={product.name} className="max-h-full object-contain" />
       </div>
 
       <h4 className="text-base font-semibold text-gray-900 mb-6">{product.name}</h4>
 
-      <button className="text-sm text-red-600 font-medium flex items-center gap-2 cursor-pointer hover:underline">
+      <button
+        className="text-sm text-red-600 font-medium flex items-center gap-2 cursor-pointer hover:underline"
+        onClick={(e) => {
+          e.stopPropagation();
+          navigate("/products");
+        }}>
         View Product <span>👁</span>
       </button>
     </motion.div>
