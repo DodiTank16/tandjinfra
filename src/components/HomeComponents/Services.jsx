@@ -46,7 +46,7 @@ const services = [
 
 function Services() {
   return (
-    <section id="services" className="py-16 bg-gray-100">
+    <section id="services" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
         <motion.h1

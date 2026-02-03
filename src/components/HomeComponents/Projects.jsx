@@ -37,7 +37,7 @@ const projects = [
 
 function Projects() {
   return (
-    <section id="projects" className="py-16 bg-gray-50">
+    <section id="projects" className="py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
         <motion.h1
