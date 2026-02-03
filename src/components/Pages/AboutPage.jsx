@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import cementBg from "../../assets/images/cement-bg.png";
 
 function AnimatedCounter({ target, duration = 2000 }) {
   const [count, setCount] = useState(0);
@@ -37,7 +38,13 @@ function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 relative">
+    <div
+      className="min-h-screen bg-gray-50 relative"
+      style={{
+        backgroundImage: `url(${cementBg})`,
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+      }}>
       {/* Background Accents */}
 
       {/* Hero Section */}
@@ -86,8 +93,8 @@ function AboutPage() {
             <span className="text-[#00749e]">we build experiences.</span>
           </h2>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-            From concept to creation, we specialize in luxury real estate and commercial design with uncompromising quality. Our
-            commitment is to turn your vision into iconic structures.
+            From concept to creation, we specialize in luxury real estate and commercial design with uncompromising
+            quality. Our commitment is to turn your vision into iconic structures.
           </p>
           <Link
             to="/services"

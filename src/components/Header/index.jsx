@@ -2,7 +2,6 @@ import { AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FaBars, FaChevronDown, FaCube, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import cementBg from "../../assets/images/cement-bg.png";
 import FullMenu from "./FullMenu";
 import ProductsDropdown from "./ProductsDropdown";
 
@@ -32,13 +31,7 @@ function Header() {
   }, [location]);
 
   return (
-    <header
-      className="fixed top-0 left-0 w-full backdrop-blur-md border-b border-gray-200 z-50"
-      style={{
-        backgroundImage: `url(${cementBg})`,
-        backgroundRepeat: "repeat",
-        backgroundSize: "auto",
-      }}>
+    <header className="fixed top-0 left-0 w-full backdrop-blur-md border-b border-gray-200 bg-black/30 z-50">
       <div className="px-6 h-16 flex items-center justify-between">
         {/* LOGO */}
         <Link to="/" className="flex items-center gap-3">

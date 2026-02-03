@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import cementBg from "../../assets/images/cement-bg.png";
 
 function ProjectsPage() {
   const projects = [
@@ -36,7 +37,13 @@ function ProjectsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 relative">
+    <div
+      className="min-h-screen relative"
+      style={{
+        backgroundImage: `url(${cementBg})`,
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+      }}>
       {/* Heading */}
       <section className="py-24 px-6 text-center">
         <motion.h1
@@ -53,7 +60,8 @@ function ProjectsPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
-          Explore our portfolio of exceptional projects that demonstrate our expertise in construction, architecture, and design.
+          Explore our portfolio of exceptional projects that demonstrate our expertise in construction, architecture,
+          and design.
         </motion.p>
       </section>
 

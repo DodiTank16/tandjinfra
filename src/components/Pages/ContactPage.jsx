@@ -1,13 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
+import cementBg from "../../assets/images/cement-bg.png";
 
 function ContactPage() {
   return (
-    <div className="min-h-screen bg-gray-50 relative">
-      {/* Background Accent */}
-      <div className="absolute top-0 -left-16 w-72 h-72 bg-indigo-100 rounded-full blur-3xl opacity-40 -z-10"></div>
-      <div className="absolute bottom-0 -right-16 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-30 -z-10"></div>
-
+    <div
+      className="min-h-screen bg-gray-50 relative"
+      style={{
+        backgroundImage: `url(${cementBg})`,
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+      }}>
       {/* Heading */}
       <section className="py-24 px-6 text-center">
         <motion.h1

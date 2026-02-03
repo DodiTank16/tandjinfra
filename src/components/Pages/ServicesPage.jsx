@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import cementBg from "../../assets/images/cement-bg.png";
 
 function ServicesPage() {
   const services = [
@@ -46,7 +47,13 @@ function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 relative">
+    <div
+      className="min-h-screen bg-gray-50 relative"
+      style={{
+        backgroundImage: `url(${cementBg})`,
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+      }}>
       {/* Background accents */}
 
       {/* Hero Section */}
@@ -65,8 +72,8 @@ function ServicesPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
-          We deliver exceptional construction, design, and consultancy services tailored for your dream projects. Explore what we
-          can do for you.
+          We deliver exceptional construction, design, and consultancy services tailored for your dream projects.
+          Explore what we can do for you.
         </motion.p>
       </section>
 

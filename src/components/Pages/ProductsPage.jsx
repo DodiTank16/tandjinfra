@@ -30,7 +30,9 @@ export default function Products() {
   const [activeProduct, setActiveProduct] = useState(null);
   const [showMobileCats, setShowMobileCats] = useState(false);
 
-  const filteredProducts = selectedSubCategory ? products.filter((p) => p.subCategory === selectedSubCategory) : products;
+  const filteredProducts = selectedSubCategory
+    ? products.filter((p) => p.subCategory === selectedSubCategory)
+    : products;
 
   // ESC closes modal
   useEffect(() => {
@@ -40,7 +42,13 @@ export default function Products() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div
+      className="min-h-screen bg-gray-50"
+      style={{
+        backgroundImage: `url(${cementBg})`,
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+      }}>
       <main className="max-w-7xl mx-auto py-24 px-4 md:px-6">
         {/* Heading */}
         <motion.h1
@@ -52,7 +60,9 @@ export default function Products() {
 
         {/* MOBILE: Category Toggle */}
         <div className="md:hidden mb-6">
-          <button onClick={() => setShowMobileCats(true)} className="w-full py-3 rounded-xl bg-[#616161] text-white font-medium">
+          <button
+            onClick={() => setShowMobileCats(true)}
+            className="w-full py-3 rounded-xl bg-[#616161] text-white font-medium">
             Browse Categories
           </button>
         </div>
@@ -127,7 +137,11 @@ export default function Products() {
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-t-3xl md:rounded-3xl w-full md:max-w-xl p-6 max-h-[90vh] overflow-y-auto">
-              <img src={activeProduct.image} alt={activeProduct.name} className="w-full h-56 object-cover rounded-2xl mb-4" />
+              <img
+                src={activeProduct.image}
+                alt={activeProduct.name}
+                className="w-full h-56 object-cover rounded-2xl mb-4"
+              />
               <h2 className="text-xl font-bold mb-2">{activeProduct.name}</h2>
               <p className="text-gray-600 leading-relaxed">{activeProduct.description}</p>
             </motion.div>
@@ -139,7 +153,13 @@ export default function Products() {
 }
 
 /* ---------------- SIDEBAR ---------------- */
-function Sidebar({ expandedCategory, setExpandedCategory, selectedSubCategory, setSelectedSubCategory, mobile = false }) {
+function Sidebar({
+  expandedCategory,
+  setExpandedCategory,
+  selectedSubCategory,
+  setSelectedSubCategory,
+  mobile = false,
+}) {
   return (
     <aside
       className={`${mobile ? "" : "w-80"} bg-white/90 backdrop-blur-xl p-6 rounded-3xl shadow-xl border h-fit`}
