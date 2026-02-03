@@ -26,7 +26,7 @@ function FullMenu({ onClose }) {
         exit={{ x: "100%" }}
         transition={{ duration: 0.45, ease: "easeOut" }}
         onClick={(e) => e.stopPropagation()}
-        className="absolute right-0 top-0 h-[100vh] w-[460px] bg-gradient-to-b from-[#1c1c1c] via-[#141414] to-[#0b0b0b] text-gray-300 px-12 py-10 overflow-y-auto no-scrollbar">
+        className="absolute right-0 top-0 h-[100vh] w-full max-w-[460px] bg-gradient-to-b from-[#1c1c1c] via-[#141414] to-[#0b0b0b] text-gray-300 px-5 sm:px-8 md:px-12 py-10 overflow-y-auto no-scrollbar">
         {/* CLOSE BUTTON */}
         <button
           onClick={onClose}
@@ -35,15 +35,29 @@ function FullMenu({ onClose }) {
         </button>
 
         {/* NAV */}
-        <nav className="mt-24 space-y-12 text-[22px] tracking-wide uppercase">
+        <nav className="mt-10 space-y-8 text-[22px] tracking-wide uppercase">
           {/* MAIN LINKS */}
           {ALL_NAV.filter((i) => i.label !== "Products").map((item) => (
-            <MenuItem key={item.path} label={item.label} to={item.path} active={isActive(item.path)} onClick={onClose} />
+            <MenuItem
+              key={item.path}
+              label={item.label}
+              to={item.path}
+              active={isActive(item.path)}
+              onClick={onClose}
+            />
           ))}
 
           {/* PRODUCTS ACCORDION */}
           <div>
-            <button onClick={() => setProductsOpen((p) => !p)} className="w-full flex items-center justify-between text-left">
+            <button
+              onClick={() => {
+                setProductsOpen((p) => {
+                  const next = !p;
+                  if (next) setServicesOpen(false);
+                  return next;
+                });
+              }}
+              className="w-full flex items-center justify-between text-left">
               <span className="flex items-center gap-4">
                 {productsOpen && <span className="w-6 h-[2px] bg-[#00455E]" />}
                 OUR PRODUCTS
@@ -74,7 +88,15 @@ function FullMenu({ onClose }) {
           {/* SERVICES DROPDOWN */}
           {/* SERVICES ACCORDION */}
           <div>
-            <button onClick={() => setServicesOpen((p) => !p)} className="w-full flex items-center justify-between text-left">
+            <button
+              onClick={() => {
+                setServicesOpen((p) => {
+                  const next = !p;
+                  if (next) setProductsOpen(false);
+                  return next;
+                });
+              }}
+              className="w-full flex items-center justify-between text-left">
               <span className="flex items-center gap-4">
                 {servicesOpen && <span className="w-6 h-[2px] bg-[#00455E]" />}
                 SERVICES
@@ -93,7 +115,11 @@ function FullMenu({ onClose }) {
                   className="overflow-hidden mt-6 pl-10 space-y-4
                    text-[15px] text-gray-400 normal-case">
                   {SERVICES.map((service) => (
-                    <Link key={service.path} to={service.path} onClick={onClose} className="block hover:text-white transition">
+                    <Link
+                      key={service.path}
+                      to={service.path}
+                      onClick={onClose}
+                      className="block hover:text-white transition">
                       {service.label}
                     </Link>
                   ))}
