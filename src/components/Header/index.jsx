@@ -4,6 +4,7 @@ import { FaBars, FaChevronDown, FaCube, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import FullMenu from "./FullMenu";
 import ProductsDropdown from "./ProductsDropdown";
+import Logo from "../../assets/logo.svg";
 
 function Header() {
   const location = useLocation();
@@ -35,7 +36,8 @@ function Header() {
       <div className="px-6 h-16 flex items-center justify-between">
         {/* LOGO */}
         <Link to="/" className="flex items-center gap-3">
-          <FaCube className="text-[#616161]" />
+          {/* <FaCube className="text-[#616161]" /> */}
+          <img src={Logo} alt="logo" className="w-15 h-15" />
           <span className="font-bold text-gray-800 text-2xl">T&J Infra</span>
         </Link>
 

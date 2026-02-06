@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaCube } from "react-icons/fa";
+import Logo from "../../assets/logo.svg";
 
 function Footer() {
   const links = [
@@ -20,7 +21,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 !pt-16 !pb-2 relative overflow-hidden">
+    <footer className="bg-gray-900 text-gray-300 !pt-10 !pb-2 relative overflow-hidden">
       {/* <footer
       className=" text-gray-300 !pt-16 !pb-2 relative overflow-hidden"
       style={{
@@ -37,9 +38,11 @@ function Footer() {
         className="mx-auto !px-6 !lg:px-12 flex flex-col md:flex-row justify-between gap-12 w-full">
         {/* Logo + About */}
         <div className="flex-4">
-          <a href="/" className="flex items-center gap-10 text-2xl md:text-3xl lg:text-5xl !mb-5">
-            <FaCube className="text-[#616161]" />
-            <span className="font-bold text-white">T&J Infra</span>
+          <a href="/" className="flex items-center gap-5 text-2xl md:text-3xl lg:text-5xl !mb-5">
+            {/* <FaCube className="text-[#616161]" /> */}
+            <img src={Logo} alt="logo" className="w-50 h-50" />
+
+            {/* <span className="font-bold text-white">T&J Infra</span> */}
           </a>
 
           {/* <h2 className="text-6xl font-bold text-white !mb-4 ">
@@ -130,7 +133,7 @@ function Footer() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}
         viewport={{ once: true }}
-        className="!mt-12 border-t border-gray-700 !pt-6 text-center text-gray-500 text-md">
+        className="!mt-12 border-t border-gray-700 !pt-2 text-center text-gray-500 text-md">
         © {new Date().getFullYear()} T&J Infra. All rights reserved.
       </motion.div>
     </footer>
