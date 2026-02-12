@@ -1,136 +1,210 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import cementBg from "../../assets/images/cement-bg.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
-function AnimatedCounter({ target, duration = 2000 }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const end = parseInt(target.replace(/\D/g, ""));
-    if (start === end) return;
-
-    const incrementTime = Math.max(Math.floor(duration / end), 1);
-    const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start === end) clearInterval(timer);
-    }, incrementTime);
-
-    return () => clearInterval(timer);
-  }, [target, duration]);
-
-  return (
-    <span className="text-[#00749e]">
-      {count}
-      {target.replace(/[0-9]/g, "")}
-    </span>
-  );
-}
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 function AboutPage() {
-  const stats = [
-    { value: "10+", label: "Years of Excellence" },
-    { value: "1500+", label: "Projects Delivered" },
-    { value: "790+", label: "Happy Clients" },
-    { value: "450+", label: "Dedicated Experts" },
-  ];
-
   return (
     <div
-      className="min-h-screen bg-gray-50 relative"
+      className="min-h-screen relative overflow-hidden"
       style={{
         backgroundImage: `url(${cementBg})`,
         backgroundRepeat: "repeat",
         backgroundSize: "auto",
       }}>
-      {/* Background Accents */}
+      {/* Floating Accent */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-[#00749e]/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-40 right-10 w-72 h-72 bg-[#00455E]/10 rounded-full blur-3xl animate-pulse"></div>
 
-      {/* Hero Section */}
-      <section className="py-24 px-6 text-center">
+      {/* HERO */}
+      <section className="py-28 px-6 text-center relative">
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
-          Who <span className="text-[#00455E]">We Are</span>
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
+          Engineering <span className="text-[#00455E]">Strength</span> <br />
+          Building <span className="text-[#00749e]">Trust</span>
         </motion.h1>
+
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
-          We create exceptional spaces, turning visions into iconic structures that stand the test of time.
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2 }}
+          className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          ISO certified precast and infrastructure specialists delivering structurally engineered RCC prestressed
+          systems with uncompromising quality and performance.
         </motion.p>
       </section>
 
-      {/* Video + Text Section */}
-      <section className="py-16 px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
+      {/* COMPANY OVERVIEW WITH GLASS EFFECT */}
+      <section className="py-20 px-6 md:px-12 max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          className="relative group rounded-2xl overflow-hidden shadow-2xl">
-          <video src="/images/about-vid.mp4" loop muted autoPlay className="w-full h-full object-cover rounded-2xl" />
-          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition"></div>
-          <div className="absolute bottom-4 left-4 text-white text-lg md:text-xl font-medium">
-            Building Dreams, Delivering Trust
-          </div>
-        </motion.div>
+          className="bg-white/80 backdrop-blur-xl p-12 rounded-3xl shadow-2xl border border-white/40 hover:shadow-3xl transition">
+          <h2 className="text-3xl font-bold text-[#00455E] mb-6">Company Overview</h2>
 
-        <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="space-y-6">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 leading-snug">
-            We don’t just build projects, <br />
-            <span className="text-[#00749e]">we build experiences.</span>
-          </h2>
-          <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-            From concept to creation, we specialize in luxury real estate and commercial design with uncompromising
-            quality. Our commitment is to turn your vision into iconic structures.
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Established in 2018, <span className="font-semibold text-[#00455E]">T & J Infra</span>
+            is an ISO 9001, ISO 45001, and ISO 14001 certified organization specializing in the manufacture and supply
+            of RCC prestressed precast systems and structural infrastructure solutions. Over the years, we have built a
+            reputation for engineering precision, operational discipline, and safe project execution across diverse
+            infrastructure environments.
           </p>
-          <Link
-            to="/services"
-            className="inline-block px-6 py-3 rounded-xl bg-[#00455E] text-white font-semibold shadow-lg hover:bg-[#00749e] transition">
-            Explore Our Services
-          </Link>
+
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Our manufacturing processes are aligned with applicable Indian Standards including{" "}
+            <span className="font-medium">IS 456, IS 1343, and IS 1786</span>, ensuring structural integrity,
+            dimensional accuracy, load efficiency, and long-term durability. Every component is produced under strict
+            QA/QC supervision, supported by systematic planning, documentation, and inspection protocols.
+          </p>
+
+          <p className="text-gray-700 leading-relaxed mb-6">
+            We offer a comprehensive product portfolio including prestressed precast boundary walls, U-drains, manholes,
+            structural precast members, kerb stones, route markers, and customized engineered solutions designed
+            strictly as per approved drawings and technical specifications.
+          </p>
+
+          <p className="text-gray-700 leading-relaxed">
+            Beyond precast manufacturing, T & J Infra provides integrated fabrication, structural steel works, PEB
+            structures, industrial sheds, signage systems, and erection services — delivering end-to-end infrastructure
+            support with a commitment to quality, safety, and on-time project completion.
+          </p>
         </motion.div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {stats.map((item, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-10 hover:shadow-2xl transition">
-            <h3 className="text-3xl md:text-5xl font-bold text-[#616161]">
-              <AnimatedCounter target={item.value} />
-            </h3>
-            <p className="mt-3 text-gray-700 font-medium text-base md:text-lg">{item.label}</p>
-          </motion.div>
-        ))}
+      {/* BUSINESS SEGMENTS INTERACTIVE CARDS */}
+      <section className="py-20 px-6 md:px-12 text-center bg-gray-100">
+        <h2 className="text-4xl font-bold text-[#00455E] mb-12">Business Segments</h2>
+
+        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          {[
+            "RCC Precast Manufacturing",
+            "Structural Steel Fabrication",
+            "Precast & Structural Installation",
+            "Pipeline & Infrastructure",
+            "Solar & Electrical Projects",
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05, rotateX: 5 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="bg-white p-8 rounded-3xl shadow-xl hover:bg-[#00455E] hover:text-white transition duration-500 cursor-pointer">
+              {item}
+            </motion.div>
+          ))}
+        </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-24 px-6 text-center bg-[#00455E] text-white rounded-t-3xl">
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">Ready to start your dream project?</h2>
-        <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-          Get in touch with our team of experts and let’s build something extraordinary together.
+      {/* TIMELINE WITH ANIMATED LINE */}
+      <section className="py-24 px-6 md:px-12">
+        <h2 className="text-4xl font-bold text-center text-[#00455E] mb-16">Our Growth Journey</h2>
+
+        <div className="relative max-w-4xl mx-auto">
+          <motion.div
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="absolute left-6 top-0 w-1 bg-[#00749e]"></motion.div>
+
+          <div className="space-y-12 pl-16">
+            {[
+              "2018 – Company Established",
+              "2019 – Expanded Fabrication Services",
+              "2021 – Achieved ISO Certifications",
+              "2023 – Multi-State Expansion",
+              "2024 – Strengthened National Presence",
+            ].map((text, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="bg-white p-6 rounded-2xl shadow-md">
+                {text}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CLIENT SLIDER */}
+      <section className="py-24 px-6 md:px-12 text-center bg-gray-100">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#00455E] mb-6">Leading Clients</h2>
+
+        <p className="text-gray-600 max-w-2xl mx-auto mb-12">
+          Trusted by government bodies, infrastructure developers and industrial leaders across India.
         </p>
+
+        <Swiper
+          modules={[Autoplay]}
+          loop={true}
+          spaceBetween={30}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          breakpoints={{
+            320: { slidesPerView: 2 },
+            640: { slidesPerView: 3 },
+            1024: { slidesPerView: 5 },
+          }}>
+          {[1, 2, 3, 4, 5, 6].map((_, i) => (
+            <SwiperSlide key={i}>
+              <div className="bg-white mb-2 p-6 rounded-2xl shadow-md hover:shadow-2xl transition flex items-center justify-center h-40">
+                <img
+                  src="https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg"
+                  alt="Client Logo"
+                  className="h-14 object-contain grayscale hover:grayscale-0 transition duration-300"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      {/* CERTIFICATIONS */}
+      <section className="py-20 px-6 md:px-12 text-center">
+        <h2 className="text-4xl font-bold text-[#00455E] mb-12">Certifications</h2>
+
+        <div className="flex flex-wrap justify-center gap-12">
+          {["ISO 9001", "ISO 45001", "ISO 14001"].map((iso, i) => (
+            <motion.div key={i} whileHover={{ scale: 1.1 }} className="bg-gray-100 p-8 rounded-3xl shadow-lg">
+              <div className="w-24 h-24 bg-[#00749e] rounded-full mx-auto mb-4"></div>
+              <p className="font-semibold text-gray-700">{iso}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-28 px-6 text-center bg-gradient-to-r from-[#00455E] to-[#00749e] text-white">
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-4xl md:text-6xl font-bold mb-6">
+          Let's Build the Future Together
+        </motion.h2>
+
         <Link
           to="/contact"
-          className="px-6 py-3 bg-white text-[#616161] font-semibold rounded-xl shadow-lg hover:bg-[#00749e] hover:text-white transition">
+          className="px-10 py-4 bg-white text-[#00455E] font-semibold rounded-2xl shadow-lg hover:scale-105 transition">
           Contact Us
         </Link>
       </section>
