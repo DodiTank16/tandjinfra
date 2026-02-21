@@ -4,6 +4,11 @@ import cementBg from "../../assets/images/cement-bg.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import Pdf9001 from "../../assets/images/Certificates/T&J INFRA 9001 FINAL ICV.png";
+import Pdf45001 from "../../assets/images/Certificates/T&J INFRA 45001 FINAL ICV.png";
+import Pdf14001 from "../../assets/images/Certificates/T&J INFRA 14001 FINAL ICV.png";
+import TrustSeal from "../../assets/images/Certificates/TrustSeal_certificate.png";
+import LazyImage from "../LazyImage";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -11,6 +16,28 @@ const fadeUp = {
 };
 
 function AboutPage() {
+  const certifications = [
+    {
+      name: "ISO 9001:2015",
+      image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      pdf: Pdf9001,
+    },
+    {
+      name: "ISO 45001:2018",
+      image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      pdf: Pdf45001,
+    },
+    {
+      name: "ISO 14001:2015",
+      image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      pdf: Pdf14001,
+    },
+    {
+      name: "Trust Seal Certified",
+      image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      pdf: TrustSeal,
+    },
+  ];
   return (
     <div
       className="min-h-screen relative overflow-hidden"
@@ -178,14 +205,23 @@ function AboutPage() {
       </section>
 
       {/* CERTIFICATIONS */}
-      <section className="py-20 px-6 md:px-12 text-center">
+      <section className="py-20 px-6 md:px-12 text-center bg-white">
         <h2 className="text-4xl font-bold text-[#00455E] mb-12">Certifications</h2>
 
         <div className="flex flex-wrap justify-center gap-12">
-          {["ISO 9001", "ISO 45001", "ISO 14001"].map((iso, i) => (
-            <motion.div key={i} whileHover={{ scale: 1.1 }} className="bg-gray-100 p-8 rounded-3xl shadow-lg">
-              <div className="w-24 h-24 bg-[#00749e] rounded-full mx-auto mb-4"></div>
-              <p className="font-semibold text-gray-700">{iso}</p>
+          {certifications.map((cert, i) => (
+            <motion.div key={i} whileHover={{ y: -6 }} className="bg-white p-6 rounded-3xl shadow-lg w-80 transition">
+              <LazyImage src={cert.pdf} alt={cert.name} className="rounded-xl h-48 mb-4" />
+
+              <p className="font-semibold text-gray-800 mb-3">{cert.name}</p>
+
+              <a
+                href={cert.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-[#00455E] text-white rounded-xl text-sm hover:bg-[#00749e] transition">
+                View Certificate
+              </a>
             </motion.div>
           ))}
         </div>
