@@ -1,3 +1,51 @@
+import {
+  boundaryWallImages,
+  bricksWallImages,
+  heavyDutyPrecastBoundaryWallImages,
+  rccPrestressedWallImages,
+  rccWallImages,
+  hollowCoreSlabBoundaryWallImages,
+  precastUDrainImages,
+  precastManholeImages,
+  rccHumePipeImages,
+  chamberManholeCoverImages,
+  rccHalfRoundImages,
+  cableTrenchImages,
+  saucerDrainImages,
+  boxCulvertImages,
+  frictionSlabCrashBarrierImages,
+  reWallImages,
+  precastBeamImages,
+  railwaySleepersImages,
+  routeMarkerImages,
+  boundaryMarkerImages,
+  mileStoneImages,
+  bollardImages,
+  crashBarrierImages,
+  fencingPoleImages,
+  paverBlockImages,
+  gardenCurbStoneImages,
+  benchImages,
+  decorativeWallImages,
+  chainLinkImages,
+  barbedWireFencingImages,
+  weldedWireMeshFencingImages,
+  pebStructureImages,
+  mouldForPrecastProductImages,
+  msSignboardImages,
+  barricadingBoardImages,
+  safetyBarrierImages,
+  reflectiveMarkerImages,
+  warningMarkerImages,
+  kmMarkerImages,
+  directionMarkerImages,
+  aerialMarkerImages,
+  industrialShedImages,
+  commercialShedImages,
+  parkingShedImages,
+  onePieceCastingWallImages,
+} from "./productsImages";
+
 export const categories = [
   {
     id: "precast-prestressed",
@@ -91,50 +139,57 @@ export const products = [
     id: 1,
     name: "RCC Precast Boundary / Compound Wall",
     subCategory: "boundary-wall",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: boundaryWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 2,
     name: "RCC Prestressed Wall",
     subCategory: "boundary-wall",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: rccPrestressedWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 3,
     name: "Bricks Wall",
     subCategory: "boundary-wall",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: bricksWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 4,
     name: "Heavy Duty Precast Boundary Wall",
     subCategory: "boundary-wall",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: heavyDutyPrecastBoundaryWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 5,
     name: "One Piece Casting Wall",
     subCategory: "boundary-wall",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: onePieceCastingWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 6,
     name: "RCC Wall",
     subCategory: "boundary-wall",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: rccWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 7,
     name: "Hollow Core Slab Boundary Wall",
     subCategory: "boundary-wall",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: hollowCoreSlabBoundaryWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Drainage Solutions
@@ -142,50 +197,57 @@ export const products = [
     id: 8,
     name: "Precast U Drain",
     subCategory: "drainage-solutions",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: precastUDrainImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 9,
     name: "Precast Manhole",
     subCategory: "drainage-solutions",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: precastManholeImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 10,
     name: "RCC & Hume Pipe",
     subCategory: "drainage-solutions",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: rccHumePipeImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 11,
     name: "Chamber / Manhole Cover",
     subCategory: "drainage-solutions",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: chamberManholeCoverImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 12,
     name: "RCC Half Round",
     subCategory: "drainage-solutions",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: rccHalfRoundImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 13,
     name: "Cable Trench",
     subCategory: "drainage-solutions",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: cableTrenchImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 14,
     name: "Saucer Drain",
     subCategory: "drainage-solutions",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: saucerDrainImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Bridge & Structure
@@ -193,36 +255,41 @@ export const products = [
     id: 15,
     name: "Box Culvert",
     subCategory: "bridge-structure",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: boxCulvertImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 16,
     name: "Friction Slab / Crash Barrier",
     subCategory: "bridge-structure",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: frictionSlabCrashBarrierImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 17,
     name: "RE Wall",
     subCategory: "bridge-structure",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: reWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 18,
     name: "Precast Beam",
     subCategory: "bridge-structure",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: precastBeamImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 19,
     name: "Railway Sleepers",
     subCategory: "bridge-structure",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: railwaySleepersImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Safety & Demarcation
@@ -230,43 +297,49 @@ export const products = [
     id: 20,
     name: "Route Marker",
     subCategory: "safety-demarcation",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: routeMarkerImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 21,
     name: "Boundary Marker",
     subCategory: "safety-demarcation",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: boundaryMarkerImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 22,
     name: "Mile Stone",
     subCategory: "safety-demarcation",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: mileStoneImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 23,
     name: "Bollard",
     subCategory: "safety-demarcation",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: bollardImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 24,
     name: "Crash Barrier",
     subCategory: "safety-demarcation",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: crashBarrierImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 25,
     name: "Fencing Pole",
     subCategory: "safety-demarcation",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: fencingPoleImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Decorative
@@ -274,29 +347,33 @@ export const products = [
     id: 26,
     name: "Paver Block",
     subCategory: "decorative-items",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: paverBlockImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 27,
     name: "Garden Curb Stone",
     subCategory: "decorative-items",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: gardenCurbStoneImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 28,
     name: "Bench",
     subCategory: "decorative-items",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: benchImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 29,
     name: "Decorative Wall",
     subCategory: "decorative-items",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: decorativeWallImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Fabricated – Security Fence
@@ -304,22 +381,25 @@ export const products = [
     id: 30,
     name: "Chain Link",
     subCategory: "security-fence",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: chainLinkImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 31,
     name: "Barbed Wire Fencing",
     subCategory: "security-fence",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: barbedWireFencingImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 32,
     name: "Welded Wire Mesh Fencing",
     subCategory: "security-fence",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: weldedWireMeshFencingImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Structure Work
@@ -327,15 +407,17 @@ export const products = [
     id: 33,
     name: "PEB Structure",
     subCategory: "structure-work",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: pebStructureImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 34,
     name: "Mould for Precast Product",
     subCategory: "structure-work",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: mouldForPrecastProductImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Safety (MS)
@@ -343,29 +425,33 @@ export const products = [
     id: 35,
     name: "MS Signboard",
     subCategory: "safety",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: msSignboardImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 36,
     name: "Barricading Board",
     subCategory: "safety",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: barricadingBoardImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 37,
     name: "Safety Barrier",
     subCategory: "safety",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: safetyBarrierImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 38,
     name: "Reflective Marker",
     subCategory: "safety",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: reflectiveMarkerImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Demarcation (Pole Marker)
@@ -373,29 +459,33 @@ export const products = [
     id: 39,
     name: "Warning Marker",
     subCategory: "warning-marker",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: warningMarkerImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 40,
     name: "Km Marker",
     subCategory: "km-marker",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: kmMarkerImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 41,
     name: "Direction Marker",
     subCategory: "direction-marker",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: directionMarkerImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 42,
     name: "Aerial Marker",
     subCategory: "aerial-marker",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: aerialMarkerImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 
   // Shed
@@ -403,21 +493,24 @@ export const products = [
     id: 43,
     name: "Industrial Shed",
     subCategory: "industrial-shed",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: industrialShedImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 44,
     name: "Commercial Shed",
     subCategory: "commercial-shed",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: commercialShedImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
   {
     id: 45,
     name: "Parking Shed",
     subCategory: "parking-shed",
-    image: "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
-    description: "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
+    image: parkingShedImages,
+    description:
+      "High-strength RCC precast boundary wall suitable for industrial, residential and infrastructure projects.",
   },
 ];

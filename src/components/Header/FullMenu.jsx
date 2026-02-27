@@ -85,7 +85,6 @@ function FullMenu({ onClose }) {
             </AnimatePresence>
           </div>
 
-          {/* SERVICES DROPDOWN */}
           {/* SERVICES ACCORDION */}
           <div>
             <button

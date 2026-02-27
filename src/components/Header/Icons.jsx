@@ -1,5 +1,3 @@
-import { FaBars, FaInfoCircle, FaSearch, FaUser } from "react-icons/fa";
-
 function Icons({ activePanel, togglePanel, onShowContactInfo }) {
   return (
     <div className="icons">

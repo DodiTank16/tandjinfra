@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { categories, products } from "../../productsData";
 import Slider, { CategoryTabs } from "./Slider";
 
@@ -21,6 +22,7 @@ const cardVariants = {
 function ProductSlider() {
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
   const [activeProduct, setActiveProduct] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const subCategoryIds = useMemo(() => {
     const cat = categories.find((c) => c.id === activeCategory);
@@ -50,6 +52,11 @@ function ProductSlider() {
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, []);
+
+  // Reset image index when product changes
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [activeProduct]);
 
   return (
     <section className="py-20 bg-[#f7f7f7]">
@@ -92,7 +99,50 @@ function ProductSlider() {
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-t-3xl md:rounded-3xl w-full md:max-w-xl p-6 max-h-[90vh] overflow-y-auto">
-              <img src={activeProduct.image} alt={activeProduct.name} className="w-full h-56 object-cover rounded-2xl mb-4" />
+              {/* Image Slider */}
+              <div className="relative mb-4">
+                <img
+                  src={
+                    Array.isArray(activeProduct.image) ? activeProduct.image[currentImageIndex] : activeProduct.image
+                  }
+                  alt={activeProduct.name}
+                  className="w-full h-56 object-cover rounded-2xl"
+                />
+                {Array.isArray(activeProduct.image) && activeProduct.image.length > 1 && (
+                  <>
+                    {/* Previous Button */}
+                    <button
+                      onClick={() =>
+                        setCurrentImageIndex((prev) => (prev === 0 ? activeProduct.image.length - 1 : prev - 1))
+                      }
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 transition">
+                      <ChevronLeftIcon className="w-5 h-5 text-gray-800" />
+                    </button>
+
+                    {/* Next Button */}
+                    <button
+                      onClick={() =>
+                        setCurrentImageIndex((prev) => (prev === activeProduct.image.length - 1 ? 0 : prev + 1))
+                      }
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 transition">
+                      <ChevronRightIcon className="w-5 h-5 text-gray-800" />
+                    </button>
+
+                    {/* Image Dots */}
+                    <div className="flex justify-center gap-2 mt-3">
+                      {activeProduct.image.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`h-2 rounded-full transition ${
+                            index === currentImageIndex ? "bg-[#00455E] w-6" : "bg-gray-300 w-2"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
               <h2 className="text-xl font-bold mb-2">{activeProduct.name}</h2>
               <p className="text-gray-600 leading-relaxed">{activeProduct.description}</p>
             </motion.div>
@@ -105,7 +155,7 @@ function ProductSlider() {
 
 export default ProductSlider;
 
-function ProductCard({ product, onSelect }) {
+export function ProductCard({ product, onSelect }) {
   const navigate = useNavigate();
 
   return (
@@ -116,7 +166,7 @@ function ProductCard({ product, onSelect }) {
       "
       onClick={() => onSelect(product)}>
       <div className="h-44 w-full flex items-center justify-center mb-8">
-        <img src={product.image} alt={product.name} className="max-h-full object-contain" />
+        <img src={product.image[0]} alt={product.name} className="max-h-full object-contain" />
       </div>
 
       <h4 className="text-base font-semibold text-gray-900 mb-6">{product.name}</h4>

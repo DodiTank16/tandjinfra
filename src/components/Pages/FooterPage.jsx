@@ -65,7 +65,7 @@ function Footer() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: idx * 0.1 }}
                 viewport={{ once: true }}>
-                <Link to={link.path} className="hover:text-indigo-400 transition">
+                <Link to={link.path} className="hover:text-[#00749e] transition">
                   {link.name}
                 </Link>
               </motion.li>
@@ -118,7 +118,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
-                  className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-[#616161] transition">
+                  className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-[#00749e] transition">
                   {s.icon}
                 </motion.a>
               ))}

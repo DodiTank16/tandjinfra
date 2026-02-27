@@ -52,7 +52,7 @@ function Header() {
             <Link
               to="/products"
               aria-expanded={productsOpen}
-              className="flex items-center gap-2 font-medium text-gray-700 hover:text-[#616161]">
+              className="flex items-center gap-2 font-medium text-gray-300 hover:text-[#00749e]">
               Products <FaChevronDown className="text-sm" />
             </Link>
 
@@ -60,13 +60,15 @@ function Header() {
           </div>
 
           {/* CONTACT */}
-          <Link to="/contact" className="font-medium text-gray-700 hover:text-[#616161]">
+          <Link to="/contact" className="font-medium text-gray-300 hover:text-[#00749e]">
             Contact Us
           </Link>
         </nav>
 
         {/* BURGER (Desktop + Mobile) */}
-        <button className="text-2xl text-gray-700" onClick={() => setMenuOpen((p) => !p)}>
+        <button
+          className="text-2xl text-gray-700 hover:text-[#00749e] hover:scale-110 transition-transform"
+          onClick={() => setMenuOpen((p) => !p)}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>

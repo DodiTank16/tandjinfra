@@ -1,21 +1,22 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "swiper/css";
 
-import { Route, Routes, useLocation } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Pages/FooterPage";
-import Home from "./components/Home";
-import About from "./components/Pages/AboutPage";
-import Services from "./components/Pages/ServicesPage";
-import Projects from "./components/Pages/ProjectsPage";
-import Blogs from "./components/Pages/BlogsPage";
-import Contact from "./components/Pages/ContactPage";
-import Pricing from "./components/Pages/PricingPage";
-import Reviews from "./components/Pages/ReviewsPage";
-import PageWrapper from "./components/Pages/PageWrapper";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import About from "./components/Pages/AboutPage";
+import Blogs from "./components/Pages/BlogsPage";
+import Contact from "./components/Pages/ContactPage";
+import Footer from "./components/Pages/FooterPage";
+import NotFoundPage from "./components/Pages/NotFoundPage";
+import PageWrapper from "./components/Pages/PageWrapper";
+import Pricing from "./components/Pages/PricingPage";
 import Products from "./components/Pages/ProductsPage";
+import Projects from "./components/Pages/ProjectsPage";
+import Reviews from "./components/Pages/ReviewsPage";
+import Services from "./components/Pages/ServicesPage";
 
 function App() {
   const location = useLocation();
@@ -74,6 +75,9 @@ function App() {
             }
           />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/services" element={<Services />} />
+
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AnimatePresence>
       <Footer />

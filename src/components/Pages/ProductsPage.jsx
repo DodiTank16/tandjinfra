@@ -2,6 +2,7 @@ import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { TiMinus } from "react-icons/ti";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import cementBg from "../../assets/images/cement-bg.png";
 import { categories, products } from "../../productsData";
 
@@ -29,6 +30,7 @@ export default function Products() {
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const [activeProduct, setActiveProduct] = useState(null);
   const [showMobileCats, setShowMobileCats] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredProducts = selectedSubCategory
     ? products.filter((p) => p.subCategory === selectedSubCategory)
@@ -40,6 +42,11 @@ export default function Products() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  // Reset image index when product changes
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [activeProduct]);
 
   return (
     <div
@@ -137,11 +144,50 @@ export default function Products() {
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-t-3xl md:rounded-3xl w-full md:max-w-xl p-6 max-h-[90vh] overflow-y-auto">
-              <img
-                src={activeProduct.image}
-                alt={activeProduct.name}
-                className="w-full h-56 object-cover rounded-2xl mb-4"
-              />
+              {/* Image Slider */}
+              <div className="relative mb-4">
+                <img
+                  src={
+                    Array.isArray(activeProduct.image) ? activeProduct.image[currentImageIndex] : activeProduct.image
+                  }
+                  alt={activeProduct.name}
+                  className="w-full max-h-[60vh] object-contain rounded-2xl mb-4"
+                />
+                {Array.isArray(activeProduct.image) && activeProduct.image.length > 1 && (
+                  <>
+                    {/* Previous Button */}
+                    <button
+                      onClick={() =>
+                        setCurrentImageIndex((prev) => (prev === 0 ? activeProduct.image.length - 1 : prev - 1))
+                      }
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 transition">
+                      <ChevronLeftIcon className="w-5 h-5 text-gray-800" />
+                    </button>
+
+                    {/* Next Button */}
+                    <button
+                      onClick={() =>
+                        setCurrentImageIndex((prev) => (prev === activeProduct.image.length - 1 ? 0 : prev + 1))
+                      }
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 transition">
+                      <ChevronRightIcon className="w-5 h-5 text-gray-800" />
+                    </button>
+
+                    {/* Image Dots */}
+                    <div className="flex justify-center gap-2 mt-3">
+                      {activeProduct.image.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`h-2 rounded-full transition ${
+                            index === currentImageIndex ? "bg-[#00455E] w-6" : "bg-gray-300 w-2"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
               <h2 className="text-xl font-bold mb-2">{activeProduct.name}</h2>
               <p className="text-gray-600 leading-relaxed">{activeProduct.description}</p>
             </motion.div>
@@ -231,7 +277,7 @@ function ProductGrid({ products, onSelect }) {
           onClick={() => onSelect(p)}
           className="bg-white hover:bg-[#00749e] hover:text-white rounded-3xl shadow-xl p-3 cursor-pointer  xl:w-75 lg:w-50 h-fit flex flex-col">
           {/* Image */}
-          <img src={p.image} alt={p.name} className="h-[160px] w-full object-cover rounded-2xl mb-4" />
+          <img src={p.image[0]} alt={p.name} className="h-[160px] w-full object-cover rounded-2xl mb-4" />
 
           {/* Title */}
           <h3 className="font-semibold text-sm leading-snug line-clamp-2">{p.name}</h3>

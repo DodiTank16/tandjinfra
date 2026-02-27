@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import cementBg from "../../assets/images/cement-bg.png";
+import { SERVICES } from "../../utils";
+import ServiceItem from "../Slider/ServiceItem";
 
 function ServicesPage() {
   const services = [
@@ -78,21 +80,12 @@ function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            className="bg-white shadow-lg rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition">
-            <img src={service.img} alt={service.title} className="w-20 h-20 mb-6" />
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">{service.title}</h3>
-            <p className="text-gray-600 text-base md:text-sm leading-relaxed">{service.desc}</p>
-          </motion.div>
-        ))}
+      <section className="py-20 px-6 md:px-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto space-y-24">
+          {SERVICES.map((service, index) => (
+            <ServiceItem key={index} service={service} index={index} />
+          ))}
+        </div>
       </section>
 
       {/* Call to Action */}
