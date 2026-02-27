@@ -10,7 +10,7 @@ import TechnicalAssistance4 from "../assets/images/Indiamart/ServicePhotos/Cable
 
 import OilGasPipeline1 from "../assets/images/Indiamart/ServicePhotos/OilandGas/OilGas1.jpg";
 import OilGasPipeline2 from "../assets/images/Indiamart/ServicePhotos/OilandGas/OilGas2.JPG";
-import OilGasPipeline3 from "../assets/images/Indiamart/ServicePhotos/OilandGas/OilGas3.jpg";
+import OilGasPipeline3 from "../assets/images/Indiamart/ServicePhotos/OilandGas/OilGas3.JPG";
 
 import SiphonicSystem1 from "../assets/images/Indiamart/ServicePhotos/SyphoneSystem/SyphoneSystem1.jpeg";
 import SiphonicSystem2 from "../assets/images/Indiamart/ServicePhotos/SyphoneSystem/SyphoneSystem2.jpeg";
