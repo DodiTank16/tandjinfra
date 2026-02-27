@@ -1,26 +1,26 @@
-import CivilWorkService1 from "../assets/images/Indiamart/Service Photos/CIVIL WORK/CivilWorks1.jpg";
-import CivilWorkService2 from "../assets/images/Indiamart/Service Photos/CIVIL WORK/CivilWorks2.jpeg";
-import CivilWorkService3 from "../assets/images/Indiamart/Service Photos/CIVIL WORK/CivilWorks3.jpeg";
-import CivilWorkService4 from "../assets/images/Indiamart/Service Photos/CIVIL WORK/CivilWorks4.jpeg";
+import CivilWorkService1 from "../assets/images/Indiamart/ServicePhotos/CIVIL WORK/CivilWorks1.jpg";
+import CivilWorkService2 from "../assets/images/Indiamart/ServicePhotos/CIVIL WORK/CivilWorks2.jpeg";
+import CivilWorkService3 from "../assets/images/Indiamart/ServicePhotos/CIVIL WORK/CivilWorks3.jpeg";
+import CivilWorkService4 from "../assets/images/Indiamart/ServicePhotos/CIVIL WORK/CivilWorks4.jpeg";
 
-import TechnicalAssistance1 from "../assets/images/Indiamart/Service Photos/Cable Laying/TechnicalAssistance1.jpg";
-import TechnicalAssistance2 from "../assets/images/Indiamart/Service Photos/Cable Laying/TechnicalAssistance2.jpg";
-import TechnicalAssistance3 from "../assets/images/Indiamart/Service Photos/Cable Laying/TechnicalAssistance3.jpg";
-import TechnicalAssistance4 from "../assets/images/Indiamart/Service Photos/Cable Laying/TechnicalAssistance4.jpg";
+import TechnicalAssistance1 from "../assets/images/Indiamart/ServicePhotos/Cable Laying/TechnicalAssistance1.jpg";
+import TechnicalAssistance2 from "../assets/images/Indiamart/ServicePhotos/Cable Laying/TechnicalAssistance2.jpg";
+import TechnicalAssistance3 from "../assets/images/Indiamart/ServicePhotos/Cable Laying/TechnicalAssistance3.jpg";
+import TechnicalAssistance4 from "../assets/images/Indiamart/ServicePhotos/Cable Laying/TechnicalAssistance4.jpg";
 
-import OilGasPipeline1 from "../assets/images/Indiamart/Service Photos/OilandGas/OilGas1.jpg";
-import OilGasPipeline2 from "../assets/images/Indiamart/Service Photos/OilandGas/OilGas2.jpg";
-import OilGasPipeline3 from "../assets/images/Indiamart/Service Photos/OilandGas/OilGas3.jpg";
+import OilGasPipeline1 from "../assets/images/Indiamart/ServicePhotos/OilandGas/OilGas1.jpg";
+import OilGasPipeline2 from "../assets/images/Indiamart/ServicePhotos/OilandGas/OilGas2.JPG";
+import OilGasPipeline3 from "../assets/images/Indiamart/ServicePhotos/OilandGas/OilGas3.jpg";
 
-import SiphonicSystem1 from "../assets/images/Indiamart/Service Photos/Syphone system/SyphoneSystem1.jpeg";
-import SiphonicSystem2 from "../assets/images/Indiamart/Service Photos/Syphone system/SyphoneSystem2.jpeg";
-import SiphonicSystem3 from "../assets/images/Indiamart/Service Photos/Syphone system/SyphoneSystem3.jpeg";
-import SiphonicSystem4 from "../assets/images/Indiamart/Service Photos/Syphone system/SyphoneSystem4.jpeg";
+import SiphonicSystem1 from "../assets/images/Indiamart/ServicePhotos/Syphone system/SyphoneSystem1.jpeg";
+import SiphonicSystem2 from "../assets/images/Indiamart/ServicePhotos/Syphone system/SyphoneSystem2.jpeg";
+import SiphonicSystem3 from "../assets/images/Indiamart/ServicePhotos/Syphone system/SyphoneSystem3.jpeg";
+import SiphonicSystem4 from "../assets/images/Indiamart/ServicePhotos/Syphone system/SyphoneSystem4.jpeg";
 
-import HDPEPipingSystem1 from "../assets/images/Indiamart/Service Photos/HDPE PIPE INSTALLTION/HDPEPipingSystem1.jpg";
-import HDPEPipingSystem2 from "../assets/images/Indiamart/Service Photos/HDPE PIPE INSTALLTION/HDPEPipingSystem2.jpeg";
-import HDPEPipingSystem3 from "../assets/images/Indiamart/Service Photos/HDPE PIPE INSTALLTION/HDPEPipingSystem3.jpeg";
-import HDPEPipingSystem4 from "../assets/images/Indiamart/Service Photos/HDPE PIPE INSTALLTION/HDPEPipingSystem4.jpeg";
+import HDPEPipingSystem1 from "../assets/images/Indiamart/ServicePhotos/HDPE PIPE INSTALLTION/HDPEPipingSystem1.jpg";
+import HDPEPipingSystem2 from "../assets/images/Indiamart/ServicePhotos/HDPE PIPE INSTALLTION/HDPEPipingSystem2.jpeg";
+import HDPEPipingSystem3 from "../assets/images/Indiamart/ServicePhotos/HDPE PIPE INSTALLTION/HDPEPipingSystem3.jpeg";
+import HDPEPipingSystem4 from "../assets/images/Indiamart/ServicePhotos/HDPE PIPE INSTALLTION/HDPEPipingSystem4.jpeg";
 
 export const ALL_NAV = [
   { label: "Home", path: "/" },
