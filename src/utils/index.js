@@ -8,9 +8,9 @@ import TechnicalAssistance2 from "../assets/images/Indiamart/Service Photos/Cabl
 import TechnicalAssistance3 from "../assets/images/Indiamart/Service Photos/Cable Laying/TechnicalAssistance3.jpg";
 import TechnicalAssistance4 from "../assets/images/Indiamart/Service Photos/Cable Laying/TechnicalAssistance4.jpg";
 
-import OilGasPipeline1 from "../assets/images/Indiamart/Service Photos/oil and gas/OilGas1.jpg";
-import OilGasPipeline2 from "../assets/images/Indiamart/Service Photos/oil and gas/OilGas2.jpg";
-import OilGasPipeline3 from "../assets/images/Indiamart/Service Photos/oil and gas/OilGas3.jpg";
+import OilGasPipeline1 from "../assets/images/Indiamart/Service Photos/OilandGas/OilGas1.jpg";
+import OilGasPipeline2 from "../assets/images/Indiamart/Service Photos/OilandGas/OilGas2.jpg";
+import OilGasPipeline3 from "../assets/images/Indiamart/Service Photos/OilandGas/OilGas3.jpg";
 
 import SiphonicSystem1 from "../assets/images/Indiamart/Service Photos/Syphone system/SyphoneSystem1.jpeg";
 import SiphonicSystem2 from "../assets/images/Indiamart/Service Photos/Syphone system/SyphoneSystem2.jpeg";
