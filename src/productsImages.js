@@ -41,7 +41,7 @@ import CrushBarrier3 from "./assets/images/Indiamart/RCC Precast/Crush Barrier/C
 import CrushBarrier4 from "./assets/images/Indiamart/RCC Precast/Crush Barrier/CrushBarrier5.jpeg";
 import CrushBarrier5 from "./assets/images/Indiamart/RCC Precast/Crush Barrier/CrushBarrier6.jpeg";
 
-import REWall1 from "./assets/images/Indiamart/RCC Precast/RE Wall/images (2).jpeg";
+// import REWall1 from "./assets/images/Indiamart/RCC Precast/RE Wall/";
 import REWall2 from "./assets/images/Indiamart/RCC Precast/RE Wall/Pune-Solapur-2.jpg";
 import REWall3 from "./assets/images/Indiamart/RCC Precast/RE Wall/reinforced-earth-soil-wall-re-wall.jpg";
 import REWall4 from "./assets/images/Indiamart/RCC Precast/RE Wall/retaining-wall-solution-1.jpg";
@@ -136,7 +136,7 @@ export const frictionSlabCrashBarrierImages = [
   CrushBarrier4,
   CrushBarrier5,
 ];
-export const reWallImages = [REWall1, REWall2, REWall3, REWall4];
+export const reWallImages = [REWall2, REWall3, REWall4];
 export const precastBeamImages = [];
 export const railwaySleepersImages = [];
 export const routeMarkerImages = [RouteMaker1, RouteMaker2, RouteMaker3];
